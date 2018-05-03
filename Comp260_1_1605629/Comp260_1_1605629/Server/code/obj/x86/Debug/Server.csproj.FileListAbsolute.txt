@@ -48,3 +48,7 @@ C:\Users\James\Desktop\Comp260_1_1605629\Server\code\obj\x86\Debug\Server.csproj
 C:\Users\James\Desktop\Comp260_1_1605629\Server\code\obj\x86\Debug\Server.csproj.CoreCompileInputs.cache
 C:\Users\James\Desktop\Comp260_1_1605629\Server\code\obj\x86\Debug\Server.exe
 C:\Users\James\Desktop\Comp260_1_1605629\Server\code\obj\x86\Debug\Server.pdb
+C:\Users\James\Desktop\comp260-client\Comp260_1_1605629\Comp260_1_1605629\Server\code\obj\x86\Debug\Server.csprojResolveAssemblyReference.cache
+C:\Users\James\Desktop\comp260-client\Comp260_1_1605629\Comp260_1_1605629\Server\code\obj\x86\Debug\Server.csproj.CoreCompileInputs.cache
+C:\Users\James\Desktop\comp260-client\Comp260_1_1605629\Comp260_1_1605629\Server\code\obj\x86\Debug\Server.exe
+C:\Users\James\Desktop\comp260-client\Comp260_1_1605629\Comp260_1_1605629\Server\code\obj\x86\Debug\Server.pdb
