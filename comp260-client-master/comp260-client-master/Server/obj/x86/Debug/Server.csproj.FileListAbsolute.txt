@@ -1,0 +1,6 @@
+C:\Users\jc192433\Downloads\comp260-client-master\comp260-client-master\Server\obj\x86\Debug\Server.csprojResolveAssemblyReference.cache
+C:\Users\jc192433\Downloads\comp260-client-master\comp260-client-master\Server\obj\x86\Debug\Server.csproj.CoreCompileInputs.cache
+C:\Users\jc192433\Downloads\comp260-client-master\comp260-client-master\Server\bin\Debug\Server.exe
+C:\Users\jc192433\Downloads\comp260-client-master\comp260-client-master\Server\bin\Debug\Server.pdb
+C:\Users\jc192433\Downloads\comp260-client-master\comp260-client-master\Server\obj\x86\Debug\Server.exe
+C:\Users\jc192433\Downloads\comp260-client-master\comp260-client-master\Server\obj\x86\Debug\Server.pdb
