@@ -10,9 +10,3 @@ D:\BSC_TEMP\comp260-client\Client\Client\obj\x86\Debug\Client.csprojResolveAssem
 D:\BSC_TEMP\comp260-client\Client\Client\obj\x86\Debug\Client.csproj.CoreCompileInputs.cache
 D:\BSC_TEMP\comp260-client\Client\Client\obj\x86\Debug\Client.exe
 D:\BSC_TEMP\comp260-client\Client\Client\obj\x86\Debug\Client.pdb
-C:\Users\James\Downloads\Alex'sNewServer\comp260-client-master\Client\Client\bin\Debug\Client.exe
-C:\Users\James\Downloads\Alex'sNewServer\comp260-client-master\Client\Client\bin\Debug\Client.pdb
-C:\Users\James\Downloads\Alex'sNewServer\comp260-client-master\Client\Client\obj\x86\Debug\Client.csprojResolveAssemblyReference.cache
-C:\Users\James\Downloads\Alex'sNewServer\comp260-client-master\Client\Client\obj\x86\Debug\Client.csproj.CoreCompileInputs.cache
-C:\Users\James\Downloads\Alex'sNewServer\comp260-client-master\Client\Client\obj\x86\Debug\Client.exe
-C:\Users\James\Downloads\Alex'sNewServer\comp260-client-master\Client\Client\obj\x86\Debug\Client.pdb

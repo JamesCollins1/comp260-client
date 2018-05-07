@@ -20,6 +20,14 @@ using sqliteCommand = System.Data.SQLite.SQLiteCommand;
 using sqliteDataReader = System.Data.SQLite.SQLiteDataReader;
 #endif
 
+/* This is the dungeon class it is used to put all the rooms into the database and also handle request from the user to move around and chat.
+ * 
+ * 
+ * 
+ */ 
+
+
+
 namespace server
 {
     public class Dungeon
@@ -28,7 +36,9 @@ namespace server
 
         sqliteCommand command;
 
-
+        /*
+         * This function is called to populate the database with all the rooms.
+         */ 
         public void Init(string database, sqliteConnection connection)
         {
 
@@ -36,7 +46,7 @@ namespace server
         {
             var room = new Room("Cave Entrance", "You are standing at the entrance to a dark cave. You get the funny feeling a grand adventure awaits you inside.");
                 room.north = "Large Cavern";
-                var sql = "insert into " + "table_dungeon" + " (name, description, north, south, east, west) values";
+                var sql = "insert into " + "table_dungeon" + " (name, description, north, south, east, west, up, down) values";
             sql += "('" + room.name + "'";
             sql += ",";
             sql += "'" + room.desc + "'";
@@ -48,6 +58,10 @@ namespace server
             sql += "'" + room.east + "'";
             sql += ",";
             sql += "'" + room.west + "'";
+            sql += ",";
+            sql += "'" + room.up + "'";
+            sql += ",";
+            sql += "'" + room.down + "'";
             sql += ")";
             command = new sqliteCommand(sql, connection);
             command.ExecuteNonQuery();
@@ -59,7 +73,7 @@ namespace server
                 room.south = "Cave Entrance";
                 room.west = "Waterfall";
                 room.east = "Rock Face";
-                var sql = "insert into " + "table_dungeon" + " (name, description, north, south, east, west) values";
+                var sql = "insert into " + "table_dungeon" + " (name, description, north, south, east, west, up, down) values";
                 sql += "('" + room.name + "'";
                 sql += ",";
                 sql += "'" + room.desc + "'";
@@ -71,6 +85,10 @@ namespace server
                 sql += "'" + room.east + "'";
                 sql += ",";
                 sql += "'" + room.west + "'";
+                sql += ",";
+                sql += "'" + room.up + "'";
+                sql += ",";
+                sql += "'" + room.down + "'";
                 sql += ")";
                 command = new sqliteCommand(sql, connection);
                 command.ExecuteNonQuery();
@@ -80,7 +98,7 @@ namespace server
         {
             var room = new Room("Rock Face", "You find yourself before a large cliff face. There is a rope up its north face.");
                 room.north = "Small Crevice";
-                var sql = "insert into " + "table_dungeon" + " (name, description, north, south, east, west) values";
+                var sql = "insert into " + "table_dungeon" + " (name, description, north, south, east, west, up, down) values";
                 sql += "('" + room.name + "'";
                 sql += ",";
                 sql += "'" + room.desc + "'";
@@ -92,6 +110,10 @@ namespace server
                 sql += "'" + room.east + "'";
                 sql += ",";
                 sql += "'" + room.west + "'";
+                sql += ",";
+                sql += "'" + room.up + "'";
+                sql += ",";
+                sql += "'" + room.down + "'";
                 sql += ")";
                 command = new sqliteCommand(sql, connection);
                 command.ExecuteNonQuery();
@@ -101,7 +123,7 @@ namespace server
         {
             var room = new Room("Waterfall", "You follow the path which leads to a small but deep body of water being fed by a waterfall.");
                 room.east = "Large Cavern";
-                var sql = "insert into " + "table_dungeon" + " (name, description, north, south, east, west) values";
+                var sql = "insert into " + "table_dungeon" + " (name, description, north, south, east, west, up, down) values";
                 sql += "('" + room.name + "'";
                 sql += ",";
                 sql += "'" + room.desc + "'";
@@ -113,6 +135,10 @@ namespace server
                 sql += "'" + room.east + "'";
                 sql += ",";
                 sql += "'" + room.west + "'";
+                sql += ",";
+                sql += "'" + room.up + "'";
+                sql += ",";
+                sql += "'" + room.down + "'";
                 sql += ")";
                 command = new sqliteCommand(sql, connection);
                 command.ExecuteNonQuery();
@@ -123,7 +149,7 @@ namespace server
             var room = new Room("Small Crevice", "You arrive at a dead end. However, after a quick inspection it seems you can knock a few rocks loose and squeeze through the small crevice.");
                 room.south = "Rock Face";
                 room.west = "Small Cavern";
-                var sql = "insert into " + "table_dungeon" + " (name, description, north, south, east, west) values";
+                var sql = "insert into " + "table_dungeon" + " (name, description, north, south, east, west, up, down) values";
                 sql += "('" + room.name + "'";
                 sql += ",";
                 sql += "'" + room.desc + "'";
@@ -135,6 +161,10 @@ namespace server
                 sql += "'" + room.east + "'";
                 sql += ",";
                 sql += "'" + room.west + "'";
+                sql += ",";
+                sql += "'" + room.up + "'";
+                sql += ",";
+                sql += "'" + room.down + "'";
                 sql += ")";
                 command = new sqliteCommand(sql, connection);
                 command.ExecuteNonQuery();
@@ -146,7 +176,7 @@ namespace server
                 room.west = "Mysterious Mooring";
                 room.east = "Small Crevice";
                 room.north = "Large Ravine";
-                var sql = "insert into " + "table_dungeon" + " (name, description, north, south, east, west) values";
+                var sql = "insert into " + "table_dungeon" + " (name, description, north, south, east, west, up, down) values";
                 sql += "('" + room.name + "'";
                 sql += ",";
                 sql += "'" + room.desc + "'";
@@ -158,6 +188,10 @@ namespace server
                 sql += "'" + room.east + "'";
                 sql += ",";
                 sql += "'" + room.west + "'";
+                sql += ",";
+                sql += "'" + room.up + "'";
+                sql += ",";
+                sql += "'" + room.down + "'";
                 sql += ")";
                 command = new sqliteCommand(sql, connection);
                 command.ExecuteNonQuery();
@@ -169,7 +203,7 @@ namespace server
                 room.north = "Natural Spring";
                 room.east = "Small Cavern";
                 room.south = "Waterfall";
-                var sql = "insert into " + "table_dungeon" + " (name, description, north, south, east, west) values";
+                var sql = "insert into " + "table_dungeon" + " (name, description, north, south, east, west, up, down) values";
                 sql += "('" + room.name + "'";
                 sql += ",";
                 sql += "'" + room.desc + "'";
@@ -181,6 +215,10 @@ namespace server
                 sql += "'" + room.east + "'";
                 sql += ",";
                 sql += "'" + room.west + "'";
+                sql += ",";
+                sql += "'" + room.up + "'";
+                sql += ",";
+                sql += "'" + room.down + "'";
                 sql += ")";
                 command = new sqliteCommand(sql, connection);
                 command.ExecuteNonQuery();
@@ -190,7 +228,7 @@ namespace server
         {
             var room = new Room("Natural Spring", "After travelling up the river, you come to its source. Theres nowhere else to go, but maybe the spring comes from somewhere else?");
                 room.south = "Mysterious Mooring";
-                var sql = "insert into " + "table_dungeon" + " (name, description, north, south, east, west) values";
+                var sql = "insert into " + "table_dungeon" + " (name, description, north, south, east, west, up, down) values";
                 sql += "('" + room.name + "'";
                 sql += ",";
                 sql += "'" + room.desc + "'";
@@ -202,6 +240,10 @@ namespace server
                 sql += "'" + room.east + "'";
                 sql += ",";
                 sql += "'" + room.west + "'";
+                sql += ",";
+                sql += "'" + room.up + "'";
+                sql += ",";
+                sql += "'" + room.down + "'";
                 sql += ")";
                 command = new sqliteCommand(sql, connection);
                 command.ExecuteNonQuery();
@@ -212,7 +254,7 @@ namespace server
             var room = new Room("Large Ravine", "After following the path you almost fall into a huge ravine. There is several small ledges leading to the north along one of its sides.");
                 room.north = "Treasure Cave";
                 room.south = "Small Cavern";
-                var sql = "insert into " + "table_dungeon" + " (name, description, north, south, east, west) values";
+                var sql = "insert into " + "table_dungeon" + " (name, description, north, south, east, west, up, down) values";
                 sql += "('" + room.name + "'";
                 sql += ",";
                 sql += "'" + room.desc + "'";
@@ -224,6 +266,10 @@ namespace server
                 sql += "'" + room.east + "'";
                 sql += ",";
                 sql += "'" + room.west + "'";
+                sql += ",";
+                sql += "'" + room.up + "'";
+                sql += ",";
+                sql += "'" + room.down + "'";
                 sql += ")";
                 command = new sqliteCommand(sql, connection);
                 command.ExecuteNonQuery();
@@ -235,7 +281,7 @@ namespace server
                     "Finally, you have traversed all the cave has to offer and have arrived in a small cavern with a large chest in the middle. You walk to the chest and claim its treasure as your own. As you take your first handfull of gold, " +
                     "the path you walked along to get here crumbles. Theres no going back, but how do you escape? You see some water pouring from some fallen boulders in the back of the hollow, perhaps there could be a water spring nearby?");
                 room.west = "Mysterious Mooring";
-                var sql = "insert into " + "table_dungeon" + " (name, description, north, south, east, west) values";
+                var sql = "insert into " + "table_dungeon" + " (name, description, north, south, east, west, up, down) values";
                 sql += "('" + room.name + "'";
                 sql += ",";
                 sql += "'" + room.desc + "'";
@@ -247,11 +293,17 @@ namespace server
                 sql += "'" + room.east + "'";
                 sql += ",";
                 sql += "'" + room.west + "'";
+                sql += ",";
+                sql += "'" + room.up + "'";
+                sql += ",";
+                sql += "'" + room.down + "'";
                 sql += ")";
                 command = new sqliteCommand(sql, connection);
                 command.ExecuteNonQuery();
                 
             }
+
+            Console.WriteLine("Finished Rebuilding the Dungeon.");
         }
 
         public string SetRoom()
@@ -259,7 +311,9 @@ namespace server
            return spawnRoom;
         }
 
-
+        /*
+         * This is used to display the details of the current room that the player is in.
+         */ 
         public void RoomInfo(Socket UserSocket, SQLiteConnection connection, Dictionary<Socket, Character> clientDictonary)
         {
 
@@ -290,22 +344,24 @@ namespace server
                 returnMessage += "\nSouth: " + dungeonSearch["South"];
                 returnMessage += "\nEast: " + dungeonSearch["East"];
                 returnMessage += "\nWest: " + dungeonSearch["West"];
+                returnMessage += "\nUp: " + dungeonSearch["Up"];
+                returnMessage += "\nDown: " + dungeonSearch["Down"];
                 returnMessage += "\n-------------------------------";
 
             }
 
-            connection.Close();
-
             byte[] sendbuffer = encoder.GetBytes(returnMessage);
 
             int bytesSent = UserSocket.Send(sendbuffer);
-        }
 
-        public void Process(Character clientCharacter, String key, Socket UserSocket, Dictionary<Socket, Character> clientDictonary, SQLiteConnection connection)
+
+        }
+        /*
+         * This handles user requests either displaying their message and moving them around the screen. It also displays the help message if the user needs it.
+         */ 
+        public void Process(Dictionary<String, server.ReceiveThreadLaunchInfo> ConnectedClients, Character clientCharacter, String key, Socket UserSocket, Dictionary<Socket, Character> clientDictonary, Dictionary<string,Socket> socketDictonary, SQLiteConnection connection)
         {
             ASCIIEncoding encoder = new ASCIIEncoding();
-
-            connection.Open();
 
             byte[] sendbuffer;
 
@@ -325,8 +381,8 @@ namespace server
 
                 switch (input[0].ToLower())
                 {
+                    // This is used to display the different actions the player can make.
                     case "help":
-                        Console.Clear();
                         returnMessage += ("\nCommands are ....");
                         returnMessage += ("\nhelp - for this screen");
                         returnMessage += ("\nlook - to look around");
@@ -335,11 +391,7 @@ namespace server
                         Console.ReadKey(true);
                         break;
 
-                    case "look":
-                        //loop straight back
-                        Thread.Sleep(1000);
-                        break;
-
+                    // This is called when the user wants to speak to other users in his area.
                     case "say":
 
                         returnMessage += clientCharacter.name + " said ";
@@ -349,23 +401,35 @@ namespace server
                             returnMessage += (input[i] + " ");
                         }
 
-                        command = new sqliteCommand("select * from " + "table_characters" + " where Room = " + "'" + characterSearch["room"] + "'", connection);
+                        command = new sqliteCommand("select * from " + "table_characters" + " where room = " + "'" + characterSearch["room"] + "'", connection);
 
-
+                        sendbuffer = encoder.GetBytes(returnMessage);
                         var sameRoomSearch = command.ExecuteReader();
 
                         while (sameRoomSearch.Read())
                         {
-                            if (sameRoomSearch["name"] != UserSocket)
+                            if (sameRoomSearch["name"] != clientDictonary[UserSocket])
                             {
-                                sendbuffer = encoder.GetBytes(returnMessage);
-                                // bytesSent = player.Send(sendbuffer);
+                                var clientName = sameRoomSearch["name"] as String;
+                                
+                                
+                                foreach (KeyValuePair<String, server.ReceiveThreadLaunchInfo> pair in ConnectedClients)
+                                {
+                                    try
+                                    {
+                                        bytesSent = pair.Value.socket.Send(sendbuffer);
+                                    }
+                                    catch
+                                    {
+                                        Console.WriteLine("Failed to send message to others in room");
+                                    }
+                                }
+                                
                             }
                         }
-                        Thread.Sleep(1000);
-
                         break;
 
+                    // This is called by the user to travel between rooms if it's possible to do so.
                     case "go":
 
                         command = new sqliteCommand("select * from " + "table_dungeon" + " where name = " + "'" + characterSearch["room"] + "'", connection);
@@ -394,17 +458,12 @@ namespace server
                         }
                         dungeonSearch.Close();
                         characterSearch.Close();
-                        break;
+                        return;
                 }
 
-                //default:
-                    //handle error
-                    returnMessage += ("\nERROR");
-                    returnMessage += ("\nCan not " + key);
-                    returnMessage += ("\nPress any key to continue");
-                    break;
             }
 
+            // Send the message for the user.
            sendbuffer = encoder.GetBytes(returnMessage);
 
            bytesSent = UserSocket.Send(sendbuffer);
